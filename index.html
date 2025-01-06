@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		Faisal Sheikh Ai Tool
+	</title>
+</head>
+<body>
+
+	<header>
+		<h1><span class="a">A</span><span class="i">i</span> Assistance</h1>
+	</header>
+
+
+	<main>
+		<div class="images">
+        <h1><span class="sha">S<span class="fai">h</span>A</span><span class="fai">f<span class="sha">a</span>i</span></h1>
+        <p>your ai assistance , will help you to control your browsers or answers anything related to question , so enjoy the tool and use it to make your works easy</p>
+		</div>
+		<div class="aiside">
+			
+				<h1>Start Task</h1>
+				<button id="btn">Press to Start</button>
+
+		</div>
+	</main>
+	<footer>
+		<div class="btnbox">
+			<button>Contact</button>
+			<button>More</button>
+		</div>
+	</footer>
+
+	
+
+
+
+<style type="text/css">
+	*
+	{
+		margin: 0px; padding: 0px; 
+		box-sizing: border-box;
+	}
+	body
+	{
+		color: white; 
+		background: url(faisal.jpg),rgba(0, 0, 0, 0.5);
+		background-blend-mode: multiply;
+		background-size: cover; background-repeat: no-repeat; background-attachment: fixed;
+	}
+	header
+	{
+      position: fixed;
+		width: 100%; 
+		border-bottom: 1px white solid;
+		text-align: center;
+		transition: 0.5s ease;
+	}
+	
+	header h1
+	{
+		font-size: 8vw;
+		font-family: monospace;
+	}
+	header h1 .a
+	{
+		color: red;
+	}
+	header h1 .i
+	{
+		color: blue;
+	}
+
+
+
+     main
+     {
+     	display: flex; align-items: center; justify-content: space-around;
+     	height: 100vh; position: relative; top: 100px; flex-wrap: wrap;
+     }
+	.images
+	{
+		height: auto; width: 400px; overflow: hidden;
+		margin: 10px; padding: 10px; 
+		text-align: right;
+		display: flex; flex-direction: column; align-items: center; justify-content: center;
+	}
+	.images h1 .sha
+	{
+		color: red;
+	}
+	.images h1 .fai
+	{
+		color: blue;
+	}
+	.images p
+	{
+		font-size: 2vw;
+		color: white; 
+		font-weight: bolder; font-family: monospace;
+		}
+	.images h1
+	{
+		font-family: monospace;
+		font-weight: bolder; font-size: 8vw;
+
+	}
+	.images img
+	{
+		height: 100%; width: 100%;
+	}
+	.aiside
+	{
+		display: flex; align-items: center; justify-content: center; 
+		flex-direction: column;
+		margin: 10px; padding: 10px; padding-bottom: 100px;
+		gap: 10px;		 width: 400px;
+		transition: 0.5s ease;
+	}
+	.aiside:hover
+	{
+		transform: translateY(-10px); color: red;
+	}
+	.aiside h1
+	{
+		font-family: monospace; font-weight: bold;
+		font-size: 4vw;
+	}
+	.aiside button
+	{
+		transition: 0.1s ease;
+		margin: 10px; padding: 10px; background: transparent; color: white;
+		box-shadow: 1px 2px 3px whitesmoke; border-radius: 10px;
+	}
+	.aiside button:hover
+	{
+		transform: scale(1.4);
+		border-color: red;
+	}
+	.btnbox
+	{
+position: absolute; left: 200px;
+	}
+	.btnbox button
+	{
+		margin: 10px; padding: 10px;
+		border-radius: 20px; background-color: black; color: white;
+		width: 100px;
+		box-shadow: 1px 2px 3px blue;
+		font-weight: bolder; font-size: 1vw;
+	}
+
+
+
+	@media screen and (max-width:500px)
+	{
+		.btnbox
+		{
+
+              top: 20px;
+              font-size: 10vw;
+			position: relative; left: 10px; 
+		}
+		.btnbox button
+		{
+			font-size: 3vw;
+		}
+		.aiside h1
+		{
+			font-size: 13vw;
+		}
+		.aiside button
+		{
+			
+		}
+		main .images h1
+		{
+			font-size: 20vw;
+		}
+		main .images p
+		{
+			font-size: 6vw; text-align: left;
+		}
+	}
+</style>
+	<!-- javascript code -->
+
+
+
+<script type="text/javascript">
+
+	
+const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+	
+	recognition.lang = "en-US"
+
+	const btn = document.getElementById('btn');
+	btn.addEventListener("click" , ()=>{
+
+		function speak(text)
+		{
+			const abc = new SpeechSynthesisUtterance(text);
+			window.speechSynthesis.speak(abc);
+		}
+		function handlecommand(command) {
+         if (command.includes("open youtube")) {
+         	speak("opening youtube Faisal sheikh");
+         	window.open("http:/www.youtube.com" , "_blank")
+         }
+         else if (command.includes("open google")) {
+         	speak("opening google faisal sheikh");
+         	window.open("http:/www.google.com" , "_blank")
+         }
+         else if (command.includes("open facebook")) {
+         	speak("opening facebook faisal sheikh");
+         	window.open("http:/www.facebook.com" , "_blank")
+         }
+         else if(command.includes("open whatsapp")){
+         	speak("opening whatsapp faisal sheikh");
+         	window.open("http:/www.whatsapp.com" , "_blank")
+         }
+         else
+         {
+         	speak("search on google , i will open google for you if you ask me ")
+         }
+		}
+		speak("hello how can i help you Faisal Sheikh");
+		setTimeout(()=>
+		{
+			recognition.start();
+		})
+		recognition.onresult = ()=>
+		{
+			const command = event.results[0][0].transcript.toLowerCase();
+            handlecommand(command);
+ 		}
+	})
+</script>
+	
+
+</body>
+</html>
